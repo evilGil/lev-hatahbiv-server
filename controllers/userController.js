@@ -43,6 +43,21 @@ exports.user_create_get = function (req, res, next) {
     });
 };
 
+// User create form on POST.
+exports.user_create_post = function (req, res, next) {
+    var user = new User(req.body);
+    console.log("try to create new user: " + JSON.stringify(user));
+    user.save(function (err) {
+        if (err) {
+            console.log(JSON.stringify(err));
+            res.send(err.message);
+            return;
+        }
+        console.log("user saved!");
+        res.send(JSON.stringify(req.body));
+    });
+};
+
 // delete user GET.
 exports.delete_user_get = function (req, res, next) {
     console.log("try to delete user with email " + req.params.email);
