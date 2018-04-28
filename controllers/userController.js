@@ -1,10 +1,5 @@
 var User = require('../models/user');
 
-// Display list of all Users.
-exports.user_list = function (req, res) {
-    res.send('NOT IMPLEMENTED: BookInstance list');
-};
-
 // get user GET.
 exports.get_user_get = function (req, res, next) {
     console.log("try to find user with email " + req.params.email);
@@ -71,29 +66,4 @@ exports.delete_user_get = function (req, res, next) {
             res.send('didn\'t find user ' + req.params.email);
         }
     });
-};
-
-// Handle User create on POST.
-exports.user_create_post = function (req, res) {
-    res.send('NOT IMPLEMENTED: User create POST');
-};
-
-// Display User delete form on GET.
-exports.user_delete_get = function (req, res) {
-    res.send('NOT IMPLEMENTED: User delete GET');
-};
-
-// Handle BookInstance delete on POST.
-exports.bookinstance_delete_post = function (req, res) {
-    res.send('NOT IMPLEMENTED: BookInstance delete POST');
-};
-
-// Display BookInstance update form on GET.
-exports.bookinstance_update_get = function (req, res) {
-    res.send('NOT IMPLEMENTED: BookInstance update GET');
-};
-
-// Handle bookinstance update on POST.
-exports.bookinstance_update_post = function (req, res) {
-    res.send('NOT IMPLEMENTED: BookInstance update POST');
 };
